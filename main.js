@@ -6,52 +6,81 @@
 
 //Create the main container
 
-let divContainer = document.createElement('div')
-divContainer.classList = 'container'
+let container = document.createElement('div')
 
 
 //Append to the body
 
-document.body.appendChild(divContainer)
+document.body.appendChild(container)
+
+//Add the clase 'container' to give them some style
+
+container.classList = 'container'
 
 
-//Create 16 divs
+//Create a row 16 times with 16 divs inside it
+
+let gridNumber = Number(prompt('select the number of the board'))
 
 
-let squareDivs = 16
-
-
-
-for(let i = 1; i <= squareDivs * squareDivs ; i++){
-
-  let divChild = document.createElement('div')
-  divChild.classList = 'divs'
-  divContainer.appendChild(divChild)
+for(let i = 0; i < gridNumber; i++){
   
-  if(i % squareDivs === 0 ){
-    
+  //Create a row and assigned the row class
+  
+    let row = document.createElement('div')
 
-    let breakChild = document.createElement('div')
-    
-    breakChild.classList = 'break'
+    container.appendChild(row)
 
-    divContainer.appendChild(breakChild)
-    
-  } 
+    row.classList = 'row'
+ 
+  //Create the divs inside the row
+
+  for(let j = 0; j < gridNumber; j++){
+
+    let divs = document.createElement('div')
+
+    divs.classList = 'divs'
+
+    row.appendChild(divs)
+
+  }
 }
 
-// Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
+//Set up a hover effect so the grid divs change the color when your mouse passes over them
 
-let divs = document.querySelectorAll('.divs')
+//Select all the grid divs -> this is a node list (similar to an array) so we can use forEach method
 
+let gridDivs = document.querySelectorAll('.divs')
 
-divs.forEach(div =>{
+//add an event listener to each one of them
+
+gridDivs.forEach(div=>{
   div.addEventListener('mouseenter', (e)=>{
-    e.target.classList.add('divSelected')
+    e.target.style.backgroundColor = 'red'
   })
 })
 
-// Hint: “Hovering” is what happens when your mouse enters a div and ends when your mouse leaves it. You can set up event listeners for either of those events as a starting point.
-// There are multiple ways to change the color of the divs, including:
-// adding a new class to the div.
-// changing the div’s background color using JavaScript.
+
+//Add a button to the top of the screen
+
+let button = document.createElement('button')
+
+button.textContent = 'click'
+button.style.margin = '0 0 10px 0'
+
+document.body.insertBefore(button, container)
+
+
+
+
+//Send the user a popup asking for the number of squares per side for the new grid
+
+let userChoice 
+
+button.addEventListener('click', ()=>{
+  gridNumber = Number(prompt('what number do you want'))
+
+})
+
+//Once entered the existing grid should be removed and a new grid should be generated in the same total space as before
+
