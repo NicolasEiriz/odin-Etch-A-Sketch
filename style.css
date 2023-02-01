@@ -1,11 +1,16 @@
-
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .container{
   display: flex;
   /* height: 400px; */
-  width: 600px;
+  width: 700px;
   border: 1px solid black;
   flex-wrap: wrap;
+  justify-content: end;
   
 }
 

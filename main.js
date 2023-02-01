@@ -22,16 +22,22 @@ let squareDivs = 16
 
 
 
-for(let i = 0; i < squareDivs * squareDivs ; i++){
-  if(i % squareDivs === 0){
-    let divBreak = document.createElement('div')
-    divBreak.classList = 'break'
-    divContainer.appendChild(divBreak)
-  } else{
+for(let i = 1; i <= squareDivs * squareDivs ; i++){
+
   let divChild = document.createElement('div')
   divChild.classList = 'divs'
   divContainer.appendChild(divChild)
-}
+  
+  if(i % squareDivs === 0 ){
+    
+
+    let breakChild = document.createElement('div')
+    
+    breakChild.classList = 'break'
+
+    divContainer.appendChild(breakChild)
+    
+  } 
 }
 
 // Repeat this 16 timex
