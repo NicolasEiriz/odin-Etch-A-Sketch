@@ -1,4 +1,4 @@
-// // Create a webpage with a 16x16 grid of square divs.
+// Create a webpage with a 16x16 grid of square divs.
 
 // Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your HTML file!
 
@@ -67,11 +67,6 @@ function makeGrid(nums = 16){
 //Select all the grid divs -> this is a node list (similar to an array) so we can use forEach method
 
 
-makeGrid()
-
-
-
-
 let button = document.querySelectorAll('button')
 
 
@@ -121,6 +116,8 @@ button.forEach(btn=>{
 
   })
 }
-    )
+)
 
+//Call the function to make first grid square
 
+makeGrid()
