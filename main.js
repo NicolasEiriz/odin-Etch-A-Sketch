@@ -81,7 +81,7 @@ button.forEach(btn=>{
 
       //Send the user a popup asking for the number of squares per side for the new grid
 
-      let userInput = Number(prompt('select a number of squares for the new grid'))
+      let userInput = Number(value.value)
 
       //Once entered the existing grid should be removed and a new grid should be generated in the same total space as before
 
@@ -122,3 +122,20 @@ button.forEach(btn=>{
 //Call the function to make first grid square
 
 makeGrid()
+
+//TODO
+
+//Convert the newgrid button in something nicer 
+
+//Create a input with a range type to select a number between 0 and 100
+
+let input = document.querySelector('input')
+let value = document.querySelector('#value')
+
+value.textContent = input.value
+
+input.addEventListener('input', (e)=>{
+  value.textContent = e.target.value
+})
+
+range.value = document.querySelector('input').value
