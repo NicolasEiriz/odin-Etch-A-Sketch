@@ -25,7 +25,7 @@ function makeGrid(nums = 16){
 
   for(let i = 0; i < nums; i++){
   
-  //Create a row and assigned the row class
+    //Create a row and assigned the row class
   
     let row = document.createElement('div')
 
@@ -33,7 +33,7 @@ function makeGrid(nums = 16){
 
     row.classList = 'row'
  
-  //Create the divs inside the row
+    //Create the divs inside the row
 
     for(let j = 0; j < nums; j++){
 
@@ -47,22 +47,25 @@ function makeGrid(nums = 16){
 
     }
 
+    //Set up a hover effect so the grid divs change the color when your mouse passes over them
+    
     let gridDivs = document.querySelectorAll('.divs')
 
     //add an event listener to each one of them
 
     gridDivs.forEach(div=>{
-      
+
       div.addEventListener('mouseenter', (e)=>{
     
 
-    //random color
+    //white color
     e.target.style.backgroundColor = `white`
-  })
-})
-  }}
+      })
+    })
+  }
+}
 
-//Set up a hover effect so the grid divs change the color when your mouse passes over them
+
 
 //Select all the grid divs -> this is a node list (similar to an array) so we can use forEach method
 
@@ -70,14 +73,13 @@ function makeGrid(nums = 16){
 let button = document.querySelectorAll('button')
 
 
-//Send the user a popup asking for the number of squares per side for the new grid
-
-
 button.forEach(btn=>{
 
   btn.addEventListener('click', (e)=>{  
 
     if(e.target.className === 'newGrid'){
+
+      //Send the user a popup asking for the number of squares per side for the new grid
 
       let userInput = Number(prompt('select a number of squares for the new grid'))
 
@@ -115,8 +117,7 @@ button.forEach(btn=>{
       }
 
   })
-}
-)
+})
 
 //Call the function to make first grid square
 
