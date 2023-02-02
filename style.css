@@ -1,17 +1,16 @@
 .container{
-  width: 200px;
   border: 1px solid black;
   display: flex;
   width: 960px;
+  height: 500px;
   
 }  
 
-
-
 .row{
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
+  
 }
 
 .divs{
@@ -20,6 +19,7 @@
   height: 20px;
   width: 100%;
   transition: 0.5s;
+  flex: 1;
   
 }
 
