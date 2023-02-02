@@ -1,3 +1,12 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
 .container{
   border: 1px solid black;
   display: flex;
@@ -14,15 +23,16 @@
 }
 
 .divs{
-  border: 1px solid red;
+  border: 1px solid white;
+  background-color: black;
   width: 20px;
   height: 20px;
   width: 100%;
-  transition: 0.5s;
+  transition: 0.4s;
   flex: 1;
   
 }
 
-.red{
-  background-color: red;
+title{
+  color: black;
 }
